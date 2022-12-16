@@ -22,6 +22,6 @@ app.get('/', (req, res)=>{
 // mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 // .then(()=> app.listen(PORT, ()=> console.log(`Server running on PORT: ${PORT}`)))
 // .catch((error)=> console.log(error.message));
-
+app.listen(PORT, ()=> console.log(`Server running on PORT: ${PORT}`))
 // mongoose.set('useFindAndModify', false)
 // mongoose.set('strictQuery', true);
