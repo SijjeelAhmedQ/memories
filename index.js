@@ -11,12 +11,12 @@ dotenv.config()
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
-app.get('/', (req, res)=>{
+app.get('/', (req, res) => {
     res.send('Hello to Memories API')
 })
 app.use('/posts', postRoutes);
-const PORT = 6991;
+const PORT = process.env.PORT || 3000;
 mongoose.set('strictQuery', true);
 mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-.then(()=> app.listen(PORT, ()=> console.log(`Server running on PORT: ${PORT}`)))
-.catch((error)=> console.log(error.message));
+    .then(() => app.listen(PORT, () => console.log(`Server running on PORT: ${PORT}`)))
+    .catch((error) => console.log(error.message));
