@@ -15,7 +15,7 @@ app.get('/', (req, res)=>{
     res.send('Hello to Memories API')
 })
 app.use('/posts', postRoutes);
-const PORT = 3000;
+const PORT = 6991;
 mongoose.set('strictQuery', true);
 mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(()=> app.listen(PORT, ()=> console.log(`Server running on PORT: ${PORT}`)))
